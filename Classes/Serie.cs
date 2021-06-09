@@ -37,6 +37,21 @@ namespace Projeto.App
             retorno += "Classificação Indicativa: " + this.Classificacao + Environment.NewLine;
             return retorno;
         }
+
+        public string retornaTitulo()
+        {
+            return this.Titulo;
+        }
+
+        public int retornaId()
+        {
+            return this.id;
+        }
+
+        public void Excluir()
+        {
+            this.Excluido = true;
+        }
         
 
         

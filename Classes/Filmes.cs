@@ -1,3 +1,5 @@
+using System;
+
 namespace Projeto.App
 {
     public class Filmes : EntidadeBase
@@ -22,6 +24,33 @@ namespace Projeto.App
             this.Classificacao = Classificacao;
             this.Duracao = Duracao;
             this.Excluido = false;
+        }
+
+        public override string ToString()
+        {
+            string retorno = "";
+            retorno += "Gênero: " + this.genero + Environment.NewLine;
+            retorno += "Titulo: " + this.Titulo + Environment.NewLine;
+            retorno += "Descrição: " + this.Descricao + Environment.NewLine;
+            retorno += "Ano do Lançamento: " + this.Ano + Environment.NewLine;
+            retorno += "Classificação Indicativa: " + this.Classificacao + Environment.NewLine;
+            retorno += "Duração do Filme: " + this.Duracao + Environment.NewLine;
+            return retorno;
+        }
+
+        public string retornaTitulo()
+        {
+            return this.Titulo;
+        }
+
+        public int retornaId()
+        {
+            return this.id;
+        }
+
+        public void Excluir()
+        {
+            this.Excluido = true;
         }
 
 
