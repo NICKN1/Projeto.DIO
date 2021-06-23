@@ -5,7 +5,7 @@ namespace Projeto.App
     public class Serie : EntidadeBase
     {
         //Estes são os atributos da classe Serie, no qual adicionei mais alguns de minha preferência
-        private Genero genero {get; set;}
+        private Personagem personagem {get; set;}
         private string Titulo {get; set;}
         private string Descricao {get; set;}
         private int AnoInicio {get; set;}
@@ -14,10 +14,10 @@ namespace Projeto.App
         private bool Excluido {get; set;}
 
             //Estes são os métodos, adcionando os atributos abordados acima
-        public Serie(int id, Genero genero, string Titulo, string Descricao, int AnoInicio, int AnoEncerramento, int Classificacao)
+        public Serie(int id, Personagem personagem, string Titulo, string Descricao, int AnoInicio, int AnoEncerramento, int Classificacao)
         {
             this.id = id;
-            this.genero = genero;
+            this.personagem = personagem;
             this.Titulo = Titulo;
             this.Descricao = Descricao;
             this.AnoInicio = AnoInicio;
@@ -29,7 +29,7 @@ namespace Projeto.App
         public override string ToString()
         {
             string retorno = "";
-            retorno += "Gênero: " + this.genero + Environment.NewLine;
+            retorno += "Gênero: " + this.personagem + Environment.NewLine;
             retorno += "Titulo: " + this.Titulo + Environment.NewLine;
             retorno += "Descrição: " + this.Descricao + Environment.NewLine;
             retorno += "Ano do Inicio: " + this.AnoInicio + Environment.NewLine;

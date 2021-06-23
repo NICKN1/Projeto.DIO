@@ -1,6 +1,6 @@
 namespace Projeto.App
 {
-        public enum Genero
+        public enum Personagem
     {
         Acao = 1,
         Aventura = 2,
