@@ -7,7 +7,7 @@ Neste projeto o objetivo é que o usuário consiga adcionar séries ou filmes do
 
 Confesso que estou ansioso e nervoso para os desafios que eu mesmo me impus.
 
-Adicionando classes, atrinutos e métodos que eu espere que eu consiga resolver no decorrer do coding.
+Adicionando classes, atributos e métodos que eu espere que eu consiga resolver no decorrer do coding.
 
 Haverá implementações no decorrer dos dias para deixá-lo mais usual, e para cumprir o objetivo do projeto.
 

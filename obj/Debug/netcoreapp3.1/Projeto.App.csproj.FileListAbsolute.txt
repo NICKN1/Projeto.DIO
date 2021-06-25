@@ -1,0 +1,13 @@
+C:\Users\irani\OneDrive\Documentos\Projeto.App\obj\Debug\netcoreapp3.1\Projeto.App.csprojAssemblyReference.cache
+C:\Users\irani\OneDrive\Documentos\Projeto.App\obj\Debug\netcoreapp3.1\Projeto.App.AssemblyInfoInputs.cache
+C:\Users\irani\OneDrive\Documentos\Projeto.App\obj\Debug\netcoreapp3.1\Projeto.App.AssemblyInfo.cs
+C:\Users\irani\OneDrive\Documentos\Projeto.App\obj\Debug\netcoreapp3.1\Projeto.App.csproj.CoreCompileInputs.cache
+C:\Users\irani\OneDrive\Documentos\Projeto.App\bin\Debug\netcoreapp3.1\Projeto.App.exe
+C:\Users\irani\OneDrive\Documentos\Projeto.App\bin\Debug\netcoreapp3.1\Projeto.App.deps.json
+C:\Users\irani\OneDrive\Documentos\Projeto.App\bin\Debug\netcoreapp3.1\Projeto.App.runtimeconfig.json
+C:\Users\irani\OneDrive\Documentos\Projeto.App\bin\Debug\netcoreapp3.1\Projeto.App.runtimeconfig.dev.json
+C:\Users\irani\OneDrive\Documentos\Projeto.App\bin\Debug\netcoreapp3.1\Projeto.App.dll
+C:\Users\irani\OneDrive\Documentos\Projeto.App\bin\Debug\netcoreapp3.1\Projeto.App.pdb
+C:\Users\irani\OneDrive\Documentos\Projeto.App\obj\Debug\netcoreapp3.1\Projeto.App.dll
+C:\Users\irani\OneDrive\Documentos\Projeto.App\obj\Debug\netcoreapp3.1\Projeto.App.pdb
+C:\Users\irani\OneDrive\Documentos\Projeto.App\obj\Debug\netcoreapp3.1\Projeto.App.genruntimeconfig.cache
