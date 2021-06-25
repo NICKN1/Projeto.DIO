@@ -18,31 +18,34 @@ namespace Projeto.App
                     além dos que chamas as séries
                     */
                     case "1":
-                        ListarConteudo();
+                        ListarSerie();
                         break;
                     case "2":
-                        InserirSerie();
+                        ListarFilme();
                         break;
                     case "3":
-                        InserirFilme();
+                        InserirSerie();
                         break;
                     case "4":
-                        //AtualizarSerie();
+                        InserirFilme();
                         break;
                     case "5":
-                        //AtualizarFilme();
+                        //AtualizarSerie();
                         break;
                     case "6":
-                        ExcluirSerie();
+                        //AtualizarFilme();
                         break;
                     case "7":
-                        ExcluirFilme();
+                        ExcluirSerie();
                         break;
                     case "8":
-                        //VisualizarSerie();
+                        ExcluirFilme();
                         break;
                     case "9":
-                        //VisualizarFilme();
+                        VisualizarSerie();
+                        break;
+                    case "10":
+                        VisualizarFilme();
                         break;
                     case "C":
                         Console.Clear();
@@ -60,41 +63,30 @@ namespace Projeto.App
                     
         }
 
-                private static void ListarConteudo()
+                private static void ListarSerie()
         {
-            Console.WriteLine("Listar Conteúdo");
+            Console.WriteLine("Listar Séries");
 
             var listaserie = repositorioSerie.Lista();
-            var listafilme = repositorioFilmes.Lista();
 
-            if (listaserie.Count == 0)
+            if (listaserie.Count == 0) 
             {
                 Console.WriteLine("Nenhuma série cadastrada.");
                 return;
             }
             
-            if (listafilme.Count == 0)
-            {
-                Console.WriteLine("Nenhum filme cadastrado.");
-            }
-
             foreach (var serie in listaserie)
             {
                     Console.WriteLine("#ID da série {0}: . {1}", serie.retornaId(), serie.retornaTitulo());
-            }
-
-            foreach (var filme in listafilme)
-            {
-                    Console.WriteLine("#ID {0} . {1}", filme.retornaId(), filme.retornaTitulo());
             }
         }
 
         private static void ExcluirSerie()
         {
             Console.Write("Digite o id da série: ");
-            int indiceConteudo = int.Parse(Console.ReadLine());
+            int indiceSerie = int.Parse(Console.ReadLine());
 
-            repositorioSerie.Exclui(indiceConteudo);
+            repositorioSerie.Exclui(indiceSerie);
             
         }
 
@@ -129,12 +121,40 @@ namespace Projeto.App
                                         Descricao: entradaDescricao);
             repositorioSerie.Insere(novaSerie);
         }
+
+        private static void VisualizarSerie()
+        {
+            Console.Write("Digite o id da série: ");
+            int indiceSerie = int.Parse(Console.ReadLine());
+
+            var serie = repositorioSerie.RetornaPorId(indiceSerie);
+
+            Console.WriteLine(serie);
+        }
         
         /*
         *******************************************
             DAQUI IMPLEMENTAÇÃO PARA OS FILMES!!
         *******************************************
         */
+        private static void ListarFilme()
+        {
+            Console.WriteLine("Listar Filmes");
+
+            var listafilme = repositorioFilmes.Lista();
+
+            if (listafilme.Count == 0) 
+            {
+                Console.WriteLine("Nenhuma série cadastrada.");
+                return;
+            }
+            
+            foreach (var serie in listafilme)
+            {
+                    Console.WriteLine("#ID do filme {0}: . {1}", serie.retornaId(), serie.retornaTitulo());
+            }
+        }
+        
         private static void InserirFilme()
         {
             Console.WriteLine("Inserir novo filme");
@@ -153,19 +173,19 @@ namespace Projeto.App
             int entradaAno = int.Parse(Console.ReadLine());
 
             Console.Write("Digite a Classificação Indicação do filme: ");
-            int entradaClassificacao = int.Parse(Console.ReadLine());
+            int entradaclassificacao = int.Parse(Console.ReadLine());
 
             Console.Write("Digite a duração em minutos deste filme: ");
             int entradaDuracao = int.Parse(Console.ReadLine());
 
-            Console.Write("Digite a Descrição do filme ");
+            Console.Write("Digite a Descrição do filme: ");
             string entradaDescricao = Console.ReadLine();
 
             Filmes novoFilme = new Filmes(id: repositorioFilmes.ProximoId(),
                                         personagem: (PersonagemFilme)entradaPersonagem,
                                         Titulo: entradaTitulo,
                                         Ano: entradaAno,
-                                        classificacao: entradaClassificacao,
+                                        classificacao: entradaclassificacao,
                                         Duracao: entradaDuracao,
                                         Descricao: entradaDescricao);
             repositorioFilmes.Insere(novoFilme);
@@ -179,7 +199,17 @@ namespace Projeto.App
             repositorioFilmes.Exclui(indiceConteudo);
             
         }
-        
+
+        private static void VisualizarFilme()
+        {
+            Console.Write("Digite o id do Filme: ");
+            int indiceFilme = int.Parse(Console.ReadLine());
+
+            var filme = repositorioFilmes.RetornaPorId(indiceFilme);
+
+            Console.WriteLine(filme);
+        }
+
         private static string ObterOpcaoUsuario()
         {
             Console.WriteLine();
@@ -188,15 +218,16 @@ namespace Projeto.App
             Console.WriteLine("Séries e filmes do grande UCM, teste e aproveite!");
             Console.WriteLine("Informe a opcão desejada:");
 
-            Console.WriteLine("1- Listar Conteúdo");
-            Console.WriteLine("2- Inserir nova série");
-            Console.WriteLine("3- Inserir novo Filme");
-            Console.WriteLine("4- Atualizar Série");
-            Console.WriteLine("5- Atualizar Filme");
-            Console.WriteLine("6- Excluir Série");
-            Console.WriteLine("7- Excluir Filme");
-            Console.WriteLine("8- Visualizar Series");
-            Console.WriteLine("9- Visualizar Filmes");
+            Console.WriteLine("1- Listar Séries");
+            Console.WriteLine("2- Listar Filmes");
+            Console.WriteLine("3- Inserir nova série");
+            Console.WriteLine("4- Inserir novo Filme");
+            Console.WriteLine("5- Atualizar Série");
+            Console.WriteLine("6- Atualizar Filme");
+            Console.WriteLine("7- Excluir Série");
+            Console.WriteLine("8- Excluir Filme");
+            Console.WriteLine("9- Visualizar Series");
+            Console.WriteLine("10- Visualizar Filmes");
             Console.WriteLine("C- Limpar tela");
             Console.WriteLine("X- Sair");
             Console.WriteLine();

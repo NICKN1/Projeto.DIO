@@ -9,7 +9,7 @@ namespace Projeto.App
         private string Titulo {get; set;}
         private string Descricao {get; set;}
         private int Ano {get; set;}
-        private string Classificacao {get; set;}
+        private int classificacao {get; set;}
         private int Duracao {get; set;}
         private bool Excluido {get; set;}
 
@@ -21,7 +21,7 @@ namespace Projeto.App
             this.Titulo = Titulo;
             this.Descricao = Descricao;
             this.Ano = Ano;
-            this.Classificacao = Classificacao;
+            this.classificacao = classificacao;
             this.Duracao = Duracao;
             this.Excluido = false;
         }
@@ -33,8 +33,9 @@ namespace Projeto.App
             retorno += "Titulo: " + this.Titulo + Environment.NewLine;
             retorno += "Descrição: " + this.Descricao + Environment.NewLine;
             retorno += "Ano do Lançamento: " + this.Ano + Environment.NewLine;
-            retorno += "Classificação Indicativa: " + this.Classificacao + Environment.NewLine;
+            retorno += "Classificação Indicativa: " + this.classificacao + Environment.NewLine;
             retorno += "Duração do Filme: " + this.Duracao + Environment.NewLine;
+            retorno += "Excluído: " + this.Excluido;
             return retorno;
         }
 

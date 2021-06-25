@@ -27,11 +27,12 @@ namespace Projeto.App
         public override string ToString()
         {
             string retorno = "";
-            retorno += "Gênero: " + this.personagem + Environment.NewLine;
+            retorno += "Personagem Principal: " + this.personagem + Environment.NewLine;
             retorno += "Titulo: " + this.Titulo + Environment.NewLine;
             retorno += "Descrição: " + this.Descricao + Environment.NewLine;
             retorno += "Ano do Inicio: " + this.AnoInicio + Environment.NewLine;
             retorno += "Classificação Indicativa: " + this.Classificacao + Environment.NewLine;
+            retorno += "Excluído: " + this.Excluido;
             return retorno;
         }
 
