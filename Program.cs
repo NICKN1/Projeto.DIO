@@ -30,10 +30,10 @@ namespace Projeto.App
                         InserirFilme();
                         break;
                     case "5":
-                        //AtualizarSerie();
+                        AtualizarSerie();
                         break;
                     case "6":
-                        //AtualizarFilme();
+                        AtualizarFilme();
                         break;
                     case "7":
                         ExcluirSerie();
@@ -80,6 +80,40 @@ namespace Projeto.App
                     Console.WriteLine("#ID da série {0}: . {1}", serie.retornaId(), serie.retornaTitulo());
             }
         }
+
+        private static void AtualizarSerie()
+         {
+          Console.Write("Digite o id da série: ");
+          int indiceSerie = int.Parse(Console.ReadLine());
+
+           foreach (int i in Enum.GetValues(typeof(PersonagemSerie)))
+          {
+              Console.WriteLine("{0}-{1}", indiceSerie, Enum.GetName(typeof(PersonagemSerie), i));             
+          }  
+          
+          Console.Write("Digite o herói entre as opções acima: ");
+            int entradaPersonagem = int.Parse(Console.ReadLine());
+
+            Console.Write("Digite o Título da Série deste herói: ");
+            string entradaTitulo = Console.ReadLine();
+
+            Console.Write("Digite o Ano de Início da Série: ");
+            int entradaAno = int.Parse(Console.ReadLine());
+
+            Console.Write("Digite a Classificação Indicação da Série: ");
+            int entradaClassificacao = int.Parse(Console.ReadLine());
+
+            Console.Write("Digite a Descrição da Série: ");
+            string entradaDescricao = Console.ReadLine();
+
+            Serie atualizaSerie = new Serie(id: indiceSerie,
+                                        personagem: (PersonagemSerie)entradaPersonagem,
+                                        Titulo: entradaTitulo,
+                                        AnoInicio: entradaAno,
+                                        Classificacao: entradaClassificacao,
+                                        Descricao: entradaDescricao);
+            repositorioSerie.Atualiza(indiceSerie, atualizaSerie);
+          }
 
         private static void ExcluirSerie()
         {
@@ -154,6 +188,43 @@ namespace Projeto.App
                     Console.WriteLine("#ID do filme {0}: . {1}", serie.retornaId(), serie.retornaTitulo());
             }
         }
+
+        private static void AtualizarFilme()
+         {
+          Console.Write("Digite o id do Filme: ");
+          int indiceFilme = int.Parse(Console.ReadLine());
+
+          foreach (int i in Enum.GetValues(typeof(PersonagemFilme)))
+          {
+              Console.WriteLine("{0}-{1}", indiceFilme, Enum.GetName(typeof(PersonagemFilme), i));             
+          }   
+          Console.Write("Digite o herói entre as opções acima: ");
+            int entradaPersonagem = int.Parse(Console.ReadLine());
+
+            Console.Write("Digite o Título do Filme deste herói: ");
+            string entradaTitulo = Console.ReadLine();
+
+            Console.Write("Digite o Ano do lançamento deste filme: ");
+            int entradaAno = int.Parse(Console.ReadLine());
+
+            Console.Write("Digite a Classificação Indicação do filme: ");
+            int entradaclassificacao = int.Parse(Console.ReadLine());
+
+            Console.Write("Digite a duração em minutos deste filme: ");
+            int entradaDuracao = int.Parse(Console.ReadLine());
+
+            Console.Write("Digite a Descrição do filme: ");
+            string entradaDescricao = Console.ReadLine();
+
+            Filmes atualizaFilme = new Filmes(id: repositorioFilmes.ProximoId(),
+                                        personagem: (PersonagemFilme)entradaPersonagem,
+                                        Titulo: entradaTitulo,
+                                        Ano: entradaAno,
+                                        classificacao: entradaclassificacao,
+                                        Duracao: entradaDuracao,
+                                        Descricao: entradaDescricao);
+            repositorioFilmes.Atualiza(indiceFilme, atualizaFilme);
+          }
         
         private static void InserirFilme()
         {
