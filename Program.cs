@@ -15,7 +15,7 @@ namespace Projeto.App
                 switch (opcaoUsuario)
                 {
                     /*Aqui adicionei mais métodos para chamar os do repositorio dos Filmes
-                    além dos que chamas as séries
+                    além dos que chamam as séries
                     */
                     case "1":
                         ListarSerie();
@@ -46,9 +46,6 @@ namespace Projeto.App
                         break;
                     case "10":
                         VisualizarFilme();
-                        break;
-                    case "C":
-                        Console.Clear();
                         break;
 
                     default:
@@ -88,9 +85,9 @@ namespace Projeto.App
 
            foreach (int i in Enum.GetValues(typeof(PersonagemSerie)))
           {
-              Console.WriteLine("{0}-{1}", indiceSerie, Enum.GetName(typeof(PersonagemSerie), i));             
+              Console.WriteLine("{0}-{1}", i, Enum.GetName(typeof(PersonagemSerie), i));             
           }  
-          
+
           Console.Write("Digite o herói entre as opções acima: ");
             int entradaPersonagem = int.Parse(Console.ReadLine());
 
@@ -196,7 +193,7 @@ namespace Projeto.App
 
           foreach (int i in Enum.GetValues(typeof(PersonagemFilme)))
           {
-              Console.WriteLine("{0}-{1}", indiceFilme, Enum.GetName(typeof(PersonagemFilme), i));             
+              Console.WriteLine("{0}-{1}", i, Enum.GetName(typeof(PersonagemFilme), i));             
           }   
           Console.Write("Digite o herói entre as opções acima: ");
             int entradaPersonagem = int.Parse(Console.ReadLine());
@@ -252,8 +249,10 @@ namespace Projeto.App
             Console.Write("Digite a Descrição do filme: ");
             string entradaDescricao = Console.ReadLine();
 
+          
+
             Filmes novoFilme = new Filmes(id: repositorioFilmes.ProximoId(),
-                                        personagem: (PersonagemFilme)entradaPersonagem,
+                                        personagem: (PersonagemFilme)entradaPersonagem,                                   
                                         Titulo: entradaTitulo,
                                         Ano: entradaAno,
                                         classificacao: entradaclassificacao,
@@ -284,11 +283,12 @@ namespace Projeto.App
         private static string ObterOpcaoUsuario()
         {
             Console.WriteLine();
+            Console.WriteLine("*******************************************************************");
             Console.WriteLine("Bem vindo a minha plataforma!");
             Console.WriteLine("Aqui você poderá inserir, atualizar, visualizar e até mesmo excluir");
             Console.WriteLine("Séries e filmes do grande UCM, teste e aproveite!");
             Console.WriteLine("Informe a opcão desejada:");
-
+            Console.WriteLine("*******************************************************************");
             Console.WriteLine("1- Listar Séries");
             Console.WriteLine("2- Listar Filmes");
             Console.WriteLine("3- Inserir nova série");
